@@ -1,5 +1,5 @@
 # RateMyProfessor_Sample_Dataset
-This is the dataset from RateMyProfessor.com for professors' teaching evaluation. The dataset crawled and extracted from RMP has 18 variables. This part briefly describes each variable that needs to be analyzed.
+This is the dataset from RateMyProfessor.com for professors' teaching evaluation. This part briefly describes each variable that needs to be analyzed.
 
 	Professor ID: Anonymous name identifier of the professor who is rated
 
