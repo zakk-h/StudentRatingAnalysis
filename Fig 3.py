@@ -40,8 +40,8 @@ g = sns.jointplot(x = 'Course difficulty',
                   space=0,
                   color='b')
 g = sns.regplot(data['Course difficulty'], data['Star rating'], scatter=False, ax=g.ax_joint)
-plt.text(-1.2, 1.5, r"Y=-0.50X+5.18", fontsize=10)
-plt.text(-1.2, 1.3, r'$R^2$=0.20', fontsize=10)
+plt.text(-1.4, 1.5, r"Y=-0.50X+5.18", fontsize=10)
+plt.text(-1.4, 1.3, r'$R^2$=0.20', fontsize=10)
 
 fig = g.get_figure()
 plt.show()
