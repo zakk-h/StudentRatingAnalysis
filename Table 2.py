@@ -60,7 +60,7 @@ def chisquare(df): # 610152	110092
     
 if __name__ == '__main__':
     # your file path
-    src = r"C:\Users\zheng\OneDrive\博士阶段-文档\何吉波-RateMyProfessor\Dataset from RateMyProfessor.com for professors' teaching evaluation.csv"
+    src = r"Dataset from RateMyProfessor.com for professors' teaching evaluation.csv"
     res = High_low_professor_tag_analysis()
     print(res)
     chisquare(res)
