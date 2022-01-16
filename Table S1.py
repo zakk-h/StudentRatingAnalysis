@@ -6,7 +6,7 @@ import seaborn as sns
 from sklearn import preprocessing
 
 # your file path
-src = r"C:\Users\23645\OneDrive\博士阶段-文档\何吉波-RateMyProfessor\Dataset from RateMyProfessor.com for professors' teaching evaluation.csv"
+src = r"Dataset from RateMyProfessor.com for professors' teaching evaluation.csv"
 df = pd.read_csv(src)
 
 # Yearly distribution
