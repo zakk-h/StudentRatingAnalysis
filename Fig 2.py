@@ -8,7 +8,7 @@ import seaborn as sns
 import re
 
 # your file path
-src = r"C:\Users\23645\OneDrive\博士阶段-文档\何吉波-RateMyProfessor\Dataset from RateMyProfessor.com for professors' teaching evaluation.csv"
+src = r"Dataset from RateMyProfessor.com for professors' teaching evaluation.csv"
 df = pd.read_csv(src)
 df = df.rename(index=str, columns={'Student_star': "Star rating given by students", 'Grade':'Student grade'})
 print(df['Student grade'].count())
