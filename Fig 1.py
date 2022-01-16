@@ -7,7 +7,7 @@ from math import sqrt
 import seaborn as sns
 import re
 # your file path
-src = r"C:\Users\23645\OneDrive\博士阶段-文档\何吉波-RateMyProfessor\Dataset from RateMyProfessor.com for professors' teaching evaluation.csv"
+src = r"Dataset from RateMyProfessor.com for professors' teaching evaluation.csv"
 df=pd.read_csv(src)
 df["Online"] = df["Online"].map({0:"In-person",1:"Online"})
 plt.style.use("seaborn-white")
