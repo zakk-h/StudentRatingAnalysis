@@ -25,7 +25,7 @@ def extract_tag(df):
     return df['tag'].value_counts().to_frame(name='tag_number')
 
 # your file path
-src = r"C:\Users\23645\OneDrive\博士阶段-文档\何吉波-RateMyProfessor\Dataset from RateMyProfessor.com for professors' teaching evaluation.csv"
+src = r"Dataset from RateMyProfessor.com for professors' teaching evaluation.csv"
 df = pd.read_csv(src)
 print(df.head())
 
