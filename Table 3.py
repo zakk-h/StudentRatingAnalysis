@@ -23,5 +23,5 @@ def student_grade_test(src):
     
 if __name__ == '__main__':
     # your file path
-    src = r"C:\Users\23645\OneDrive\博士阶段-文档\何吉波-RateMyProfessor\Dataset from RateMyProfessor.com for professors' teaching evaluation.csv"
+    src = r"Dataset from RateMyProfessor.com for professors' teaching evaluation.csv"
     student_grade_test(src)
