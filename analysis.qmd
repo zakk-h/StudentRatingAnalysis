@@ -1,0 +1,87 @@
+---
+title: "Basic Course Review Plots"
+format: pdf
+---
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+data <- read.csv("data.csv", stringsAsFactors = FALSE)
+
+grade_to_numeric <- function(grade) {
+  case_when(
+    grade %in% c("A+", "A") ~ 4.0,
+    grade == "A-" ~ 3.7,
+    grade == "B+" ~ 3.3,
+    grade == "B"  ~ 3.0,
+    grade == "B-" ~ 2.7,
+    grade == "C+" ~ 2.3,
+    grade == "C"  ~ 2.0,
+    grade == "C-" ~ 1.7,
+    grade == "D+" ~ 1.3,
+    grade == "D"  ~ 1.0,
+    grade == "F"  ~ 0.0,
+    TRUE ~ NA_real_
+  )
+}
+
+
+```
+
+Course Rating, Grade
+
+```{r}
+data$Numeric_Grade <- sapply(data$Grade, grade_to_numeric)
+
+cleaned_data <- na.omit(data, cols = c("Star_rating", "Numeric_Grade", "Student_rated_difficulty"))
+
+correlation <- cor(cleaned_data$Star_rating, cleaned_data$Numeric_Grade)
+
+ggplot(cleaned_data, aes(x = Star_rating, y = Numeric_Grade)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", col = "blue") +
+  labs(title = "Correlation: Professor Rating and Grades Given with 95% Confidence",
+       x = "Rating",
+       y = "Numeric Grade") +
+  theme_minimal()
+
+print(paste("Correlation coefficient:", correlation))
+
+```
+
+Course Difficulty, Grade
+
+```{r}
+
+correlation2 <- cor(cleaned_data$Student_rated_difficulty, cleaned_data$Numeric_Grade)
+
+ggplot(cleaned_data, aes(x = Student_rated_difficulty, y = Numeric_Grade)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", col = "blue") +
+  labs(title = "Correlation: Professor Rating and Grades Given with 95% Confidence",
+       x = "Difficulty",
+       y = "Numeric Grade") +
+  theme_minimal()
+
+print(paste("Correlation coefficient:", correlation2))
+
+```
+
+Course Difficulty, Rating
+
+```{r}
+correlation3 <- cor(cleaned_data$Student_rated_difficulty, cleaned_data$Star_rating)
+
+ggplot(cleaned_data, aes(x = Student_rated_difficulty, y = cleaned_data$Star_rating)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", col = "blue") +
+  labs(title = "Correlation: Professor Rating and Grades Given with 95% Confidence",
+       x = "Difficulty",
+       y = "Rating") +
+  theme_minimal()
+
+print(paste("Correlation coefficient:", correlation3))
+
+```
